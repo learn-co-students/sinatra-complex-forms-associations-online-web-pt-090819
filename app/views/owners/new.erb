@@ -10,8 +10,20 @@
   <h3>Existing Pets</h3>
   <% @pets.each do |pet| %>
     <input type="checkbox" name="owner[pet_ids][]" id="<%= pet.id %>" value="<%= pet.id %>"><%= pet.name %><br>
+                             <!--^^^^^^^^^^^^^^^^-->
+                             <!-- This creates a hash w/ a "owner" hash w/ a "name" & "pet_ids" upon submission -->
+                             <!-- {"owner"=>{"name"=>"Adele", "pet_ids"=>["1", "2"]}} -->
   <% end %>
   <br>
+
+  <h3>New Pet</h3>
+  <label>Pet Name: </label>
+  <br>
+  <input type="text" name="pet[name]" id="pet_name"></input>
+                       <!--^^^^^^^^^^-->
+                       <!-- Creates a "pets" hash within the same hash as "owner" -->
+                       <!-- {"owner"=>{"name"=>"Adele", "pet_ids"=>["1", "2"]}, "pet"=>{"name"=>"Pet's Name Here"}} -->
+  <br><br>
 
   <input type="submit" value="Create Owner">
 </form>
