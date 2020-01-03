@@ -1,4 +1,4 @@
-<h1>Create a new Owner</h1>
+<h1>Create a new Owner</h1> #creating new ownerwith a field of owners name
 
 <form action="/owners" method="POST">
   <label>Name:</label>
@@ -7,7 +7,7 @@
 
   <input type="text" name="owner[name]">
 
-  <h3>Existing Pets</h3>
+  <h3>Existing Pets</h3> #owner with exisiting pets. Here is a checked box
   <% @pets.each do |pet| %>
     <input type="checkbox" name="owner[pet_ids][]" id="<%= pet.id %>" value="<%= pet.id %>"><%= pet.name %><br>
   <% end %>
